@@ -50,19 +50,6 @@ style: |
 
 ---
 
-## 目次
-- VS Codeとは？
-- GitHub Copilotとは？
-- VS Code＋GitHub Copilotでできること
-- 目的
-- VS CodeでGitHub Copilotを使うには？
-- デモ
-- まとめ
-- 告知・宣伝
-- ちなみに…
-
----
-
 ## 自己紹介
 
 - 名前：大岡延至（おおおかのぶゆき）
