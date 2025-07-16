@@ -11,29 +11,34 @@ style: |
   section {
     background: linear-gradient(135deg, #64748b 0%, #3b82f6 100%);
     color: #f1f5f9;
-    font-family: 'Press Start 2P', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
   }
   h1, h2, h3 {
     color: #fbbf24;
     letter-spacing: 0.05em;
-    font-family: 'Press Start 2P', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
   }
   .slide strong {
     color: #f59e42;
-    font-family: 'Press Start 2P', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
   }
   header, footer {
     color: #64748b;
     font-size: 0.9em;
-    font-family: 'Press Start 2P', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+  }
+  /* ページ番号の色を見出しと同じに */
+  section > footer.marpit-pagination {
+    color: #fbbf24 !important;
   }
   ul, ol {
     background: none;
     border-radius: 0;
     padding: 0 1em;
-    font-family: 'Press Start 2P', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+    font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
   }
-  .cover h1 {
+  /* タイトルスライドだけ8ビットフォント */
+  section:first-of-type h1 {
     font-size: 2.5em;
     color: #fbbf24;
     text-shadow: 2px 2px 8px #0f172a;
@@ -41,7 +46,16 @@ style: |
   }
 ---
 
+
+
+
+
+
+
+<!-- タイトルスライド -->
 # VSCode＋GitHub Copilot に全部賭けろ
+
+![casino chip](casino_chip.png)
 
 ---
 
@@ -52,9 +66,14 @@ style: |
 
 ---
 
-# 皆さんは、何に全部賭けていますか？
+
+## 皆さんは、何に全部賭けていますか？
+
+![casino dealer woman](casino_dealer_woman.png)
 
 ---
+
+
 
 ## 自己紹介
 
@@ -120,7 +139,7 @@ GitHub Copilotは、AIがコード補完や提案を行う開発支援ツール�
 
 ---
 
-# デモ
+## デモ
 
 ---
 
@@ -152,4 +171,4 @@ GitHub Copilotは、AIがコード補完や提案を行う開発支援ツール�
 
 ---
 
-# ご清聴ありがとうございました
+## ご清聴ありがとうございました！
