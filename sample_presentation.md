@@ -2,16 +2,20 @@
 marp: true
 paginate: true
 paginate-position: bottom-right
-theme: default
-title: VSCode＋GitHub Copilot に全部賭けろ
-author: コパ会代表 大岡延至
-date: 2025-07-11
 style: |
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
   section {
     background: linear-gradient(135deg, #64748b 0%, #3b82f6 100%);
     color: #f1f5f9;
     font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  }
+  blockquote {
+    color: #38bdf8;
+    font-weight: bold;
+    background: rgba(0,0,0,0.15);
+    border-left: 4px solid #38bdf8;
+    padding: 0.5em 1em;
+    border-radius: 6px;
   }
   h1, h2, h3 {
     color: #fbbf24;
@@ -23,13 +27,15 @@ style: |
     font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
   }
   header, footer {
-    color: #64748b;
     font-size: 0.9em;
     font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
   }
   /* ページ番号の色を見出しと同じに */
-  section > footer.marpit-pagination {
+  .marpit-pagination,
+  .marpit-pagination span,
+  .marpit-pagination * {
     color: #fbbf24 !important;
+    font-size: 1.3em !important;
   }
   ul, ol {
     background: none;
@@ -44,6 +50,9 @@ style: |
     text-shadow: 2px 2px 8px #0f172a;
     font-family: 'Press Start 2P', 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
   }
+title: VSCode＋GitHub Copilot に全部賭けろ
+author: コパ会代表 大岡延至
+date: 2025-07-11
 ---
 
 
@@ -88,7 +97,7 @@ style: |
 
 コパ会とは、開発本部（主にLM部とExtic部）でGitHub Copilotを有効活用するための事務局的な役割を持ったバーチャル組織です
 
-メンバーは各部長と GitHub チャンピョンを目指す人たちで構成されています
+メンバーは各部長と GitHub のエヴァンジェリストを目指す人で構成されています
 
 ---
 
@@ -108,16 +117,10 @@ GitHub Copilotは、AIがコード補完や提案を行う開発支援ツール�
 - コードの自動生成
 - コメントから関数やクラスを提案
 - 複数言語・フレームワーク対応
-
 ---
 
 ## VS Code＋GitHub Copilotでできること
-
-- コメントから関数やクラスを自動生成
-- コードの続きをAIが提案
-- テストコードやドキュメントも自動生成
 - 複数言語・フレームワークに対応
-- バグ修正やリファクタリングのヒントも
 - チーム開発でも活用可能
 
 ---
@@ -125,20 +128,12 @@ GitHub Copilotは、AIがコード補完や提案を行う開発支援ツール�
 ## 目的
 
 - 生産性を向上し、成果を最大化する
-- コードやアウトプットの質を高める
 - 空いた時間でさらに学び・成長できる
-- みんなでより良い開発体験を！
-
 ---
-
 ## VS CodeでGitHub Copilotを使うには？
 
 1. 拡張機能「GitHub Copilot」をインストール
-2. GitHubアカウントでサインイン
-3. エディターで自動補完や提案を活用
-
 ---
-
 ## デモ
 
 ---
@@ -163,11 +158,34 @@ GitHub Copilotは、AIがコード補完や提案を行う開発支援ツール�
 
 ## ちなみに…
 
-「CUIに全部賭けろ」と言っていたmizchiさんは
-- その後「Claude Code」に全部賭け
-- 今は「Gemini CLI」に全部賭けているらしいです
+
+「CLINEに全部賭けろ」と言っていた[@mizchi](https://x.com/mizchi)さんは、その後「Claude Code」に全部賭け、今は「Gemini CLI」に全部賭けているらしいです。
+
 
 時代とともに“全部賭けるもの”も変わる！
+
+---
+
+
+
+## ちなみに…
+
+
+
+あの [@t_wada](https://x.com/t_wada) さんは「[全部賭けるな、両にらみしろ](https://speakerdeck.com/twada/agentic-software-engineering-findy-2025-07-edition?slide=40)」と言っています。
+
+
+
+選択肢は一つじゃなくていい！
+
+---
+
+## ちなみに…
+
+ちなみに、このスライドも VSCode＋GitHub Copilot でほぼ agent mode で指示しただけで作ってみました。
+
+
+どうやって作ってるか気になる人は懇親会で聞いてね！！
 
 ---
 
