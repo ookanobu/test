@@ -126,7 +126,18 @@ GitHub Copilot は、AI がコード補完や提案を行う開発支援ツー�
 
 
 
-## VS Code＋GitHub Copilotでできること・目的
+## VS Code＋GitHub Copilot でできること
+
+伴走 (提案・補完): コード補完・提案、テストやドキュメント自動生成
+伴走 (対話): AIとチャットしながら複数ファイルの編集、コマンド実行
+委託 (エージェント): 指示だけで Issue から一連の作業を非同期で自動実行
+
+
+---
+
+
+
+## VS Code＋GitHub Copilot を使用する目的
 
 - 日常のコーディング作業をAIがリアルタイムでサポートし、生産性を大幅アップ
 - テストコードやドキュメントも自動生成し、アウトプットの質を高める
@@ -192,7 +203,7 @@ GitHub Copilot だけでなく、さまざまなコーディング AI を安全�
 
 あの [@t_wada](https://x.com/t_wada) さんは「[全部賭けるな、両にらみしろ](https://speakerdeck.com/twada/agentic-software-engineering-findy-2025-07-edition?slide=40)」と言っています
 
-選択肢は 1つじゃなくていい！(組織的には 1つだけですが)
+選択肢は 1つじゃなくていい！
 
 ---
 
