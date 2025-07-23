@@ -1,7 +1,7 @@
 ---
 marp: true
 paginate: true
-paginate-position: bottom-right
+# paginate-position: bottom-right を削除 - この設定があるとページ番号の色変更が効かないため
 theme: default
 title: VS Code＋GitHub Copilot に全部賭けろ
 author: コパ会代表 大岡延至
@@ -22,13 +22,35 @@ style: |
     color: #f59e42;
     font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
   }
-  header, footer {
+  header {
     color: #64748b;
     font-size: 0.9em;
     font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
   }
-  /* ページ番号の色を見出しと同じに */
+  footer {
+    color: #fbbf24;
+    font-size: 0.9em;
+    font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+  }
+  /* ページ番号の色をタイトルと同じオレンジに変更 */
+  /* 注意: paginate-position: bottom-right があると色変更が効かない */
   section > footer.marpit-pagination {
+    color: #fbbf24 !important;
+  }
+  footer.marpit-pagination {
+    color: #fbbf24 !important;
+  }
+  .marpit-pagination {
+    color: #fbbf24 !important;
+  }
+  section::after {
+    color: #fbbf24 !important;
+  }
+  /* より強力なセレクター */
+  section footer,
+  section footer *,
+  [data-marpit-pagination],
+  [data-marpit-pagination] * {
     color: #fbbf24 !important;
   }
   ul, ol {
