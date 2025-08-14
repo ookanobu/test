@@ -54,7 +54,7 @@ style: |
 <!-- タイトルスライド -->
 # VS Code＋GitHub Copilot に全部賭けろ
 
-![casino chip](casino_chip.png)
+![casino chip](./casino_chip.png)
 
 ---
 
@@ -79,7 +79,7 @@ style: |
 
 ## 皆さんは、何に全部賭けていますか？
 
-![casino dealer woman](casino_dealer_woman.png)
+![casino dealer woman](./casino_dealer_woman.png)
 
 ---
 
@@ -216,7 +216,7 @@ GitHub Copilot だけでなく、さまざまなコーディング AI を安全�
 
 ## 皆さんは、何に全部賭けますか？
 
-![casino dealer woman](casino_dealer_woman.png)
+![casino dealer woman](./casino_dealer_woman.png)
 
 ---
 
