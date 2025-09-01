@@ -1,0 +1,275 @@
+{
+  "id": 35701,
+  "project": {
+    "id": 1,
+    "name": "LDAPManager"
+  },
+  "tracker": {
+    "id": 1,
+    "name": "LM 不具合"
+  },
+  "status": {
+    "id": 1,
+    "name": "LM 新規",
+    "is_closed": false
+  },
+  "priority": {
+    "id": 2,
+    "name": "中"
+  },
+  "author": {
+    "id": 10,
+    "name": "井関 武史"
+  },
+  "assigned_to": {
+    "id": 72,
+    "name": "LM pending 保留"
+  },
+  "category": {
+    "id": 1,
+    "name": "LDAP Manager"
+  },
+  "fixed_version": {
+    "id": 91,
+    "name": "Ver6.9"
+  },
+  "subject": "【LM6.9】操作ログプロセスのCPU使用率が100%で張り付く",
+  "description": "http://10.1.1.4/testlink-1.9.14/ltx.php?item=exec&feature_id=21220&build_id=1641\r\n\r\n東京都庁様向けLDAPグループメンテナンスの非機能テストをしていますが、\r\n以下の通り操作ログのプロセスが100%に張り付き、操作がほぼできない状態になります。\r\n\r\n!操作ログ_cpu100_.png!\r\n\r\nこの状態はプラグイン実行が終了し、操作ログの設定にある「監視間隔」で設定した秒数後の後ぐらいに発生します。\r\n※）おそらく操作ログの設定にある「監視間隔」で設定した秒数を待機した後、操作ログが何かの処理を行っています。\r\n\r\nLDAPグループメンテナンスの問題ではないのですが。。。\r\n\r\n\r\n\r\n\r\n",
+  "start_date": "2019-08-06",
+  "due_date": null,
+  "done_ratio": 0,
+  "is_private": false,
+  "estimated_hours": null,
+  "total_estimated_hours": null,
+  "spent_hours": 5.5,
+  "total_spent_hours": 5.5,
+  "actual_start_date": null,
+  "actual_due_date": null,
+  "custom_fields": [
+    {
+      "id": 10,
+      "name": "LM 関連案件",
+      "value": ""
+    },
+    {
+      "id": 30,
+      "name": "LM SIer",
+      "value": ""
+    },
+    {
+      "id": 273,
+      "name": "LM 修正影響度",
+      "value": ""
+    },
+    {
+      "id": 11,
+      "name": "LM 修正概要",
+      "value": ""
+    },
+    {
+      "id": 12,
+      "name": "LM 出荷構成名",
+      "value": ""
+    },
+    {
+      "id": 13,
+      "name": "LM 先行リリース",
+      "value": "0"
+    },
+    {
+      "id": 271,
+      "name": "LM リリース時期調整中",
+      "value": "0"
+    },
+    {
+      "id": 14,
+      "name": "LM リリース予定日",
+      "value": ""
+    },
+    {
+      "id": 160,
+      "name": "LM 開発 T 引渡予定日",
+      "value": ""
+    },
+    {
+      "id": 159,
+      "name": "LM 検証予定工数",
+      "value": ""
+    },
+    {
+      "id": 16,
+      "name": "LM Setup.exeバージョン",
+      "value": ""
+    },
+    {
+      "id": 27,
+      "name": "LM 詳細バージョン",
+      "value": ""
+    },
+    {
+      "id": 17,
+      "name": "LM リリースノート掲載",
+      "value": "1"
+    },
+    {
+      "id": 140,
+      "name": "LM リリースノートURL",
+      "value": ""
+    },
+    {
+      "id": 141,
+      "name": "LM 緊急度",
+      "value": "中"
+    },
+    {
+      "id": 191,
+      "name": "LM 画面修正あり",
+      "value": ""
+    },
+    {
+      "id": 161,
+      "name": "LM 不具合発生要因",
+      "value": ""
+    },
+    {
+      "id": 24,
+      "name": "LM 関係者",
+      "multiple": true,
+      "value": []
+    }
+  ],
+  "created_on": "2019-08-06T05:56:09Z",
+  "updated_on": "2025-06-24T00:57:10Z",
+  "closed_on": null,
+  "journals": [
+    {
+      "id": 810990,
+      "user": {
+        "id": 10,
+        "name": "井関 武史"
+      },
+      "notes": "担当として持っていても対応できないのでいったん Pending に変更",
+      "created_on": "2025-06-24T00:57:10Z",
+      "private_notes": false,
+      "details": [
+        {
+          "property": "attr",
+          "name": "assigned_to_id",
+          "old_value": "10",
+          "new_value": "72"
+        },
+        {
+          "property": "cf",
+          "name": "271",
+          "old_value": null,
+          "new_value": "0"
+        }
+      ]
+    },
+    {
+      "id": 340374,
+      "user": {
+        "id": 9,
+        "name": "東山 琢也"
+      },
+      "notes": "調査した結果、プラグインに関係なく、更新前、更新後のデータ量が多いと遅くなり、CPU が 100% になります。\r\n\r\n＜確認方法＞\r\n# CSV→LDAP のみで1つの属性に複数値として 1000 バイトのデータを 3000 件登録\r\n** LDAP グループメンテナンスのメンバ処理の代わりとして想定\r\n# 操作ログの各処理で時間計測\r\n\r\n＜結果＞\r\n* 操作ログ DB に書き込む前の一時ファイルが 24,291,008 bytes\r\n* 18:02:34 ファイルオープン\r\n* 18:06:17 1行読み込み 223672 ms\r\n* 18:06:28 復号 10906 ms\r\n* 18:06:29 レコード追加 360 ms\r\n\r\n結果、時間の殆どがファイルから 1行取得する時間となります。\r\nまた、この 1行読み込みは、内製ではなく、Visual C++ に入っている、CStdioFile のメソッド、\r\nReadString を使用しているため、これ以上の中は確認することはできません。\r\n",
+      "created_on": "2019-08-21T09:17:32Z",
+      "private_notes": false,
+      "details": [
+        {
+          "property": "attr",
+          "name": "assigned_to_id",
+          "old_value": "9",
+          "new_value": "10"
+        }
+      ]
+    },
+    {
+      "id": 340103,
+      "user": {
+        "id": 9,
+        "name": "東山 琢也"
+      },
+      "notes": "以下を調査する。\r\n* CSV プラグイン実行で LDAP グループメンテナンスを実行時のみ CPU が 100% になる時間が長い\r\n他のプラグインを連携させてもそこまで行かない。\r\n** 試した環境では 3000 ユーザーを1つのグループに設定\r\n",
+      "created_on": "2019-08-20T06:37:02Z",
+      "private_notes": false,
+      "details": []
+    },
+    {
+      "id": 340102,
+      "user": {
+        "id": 9,
+        "name": "東山 琢也"
+      },
+      "notes": "",
+      "created_on": "2019-08-20T06:35:54Z",
+      "private_notes": false,
+      "details": [
+        {
+          "property": "attr",
+          "name": "assigned_to_id",
+          "old_value": null,
+          "new_value": "9"
+        }
+      ]
+    },
+    {
+      "id": 340015,
+      "user": {
+        "id": 10,
+        "name": "井関 武史"
+      },
+      "notes": "https://exgennetworks.cloudmine.jp/redmine/issues/35701\r\nの件で追加調査を行う\r\n\r\n3000件ユーザでテスト\r\n\r\n{background:#9F9}. |*実行方法*|*操作ログが実行された時間*|\r\n|CSV→LDAP手動実行|操作ログのプロセスが70%程度になり合計CPU使用率100%となる\r\n1分程度程度|\r\n|CSVプラグイン実行（連携プラグインなし）|操作ログのプロセスが70%程度になり合計CPU使用率100%となる\r\n3分程度|\r\n|LDAPグループメンテナンス手動実行|5秒程度\r\n→1グループ（エントリ）だから？|\r\n|CSVプラグイン実行（連携プラグイン：LDAPグループメンテナンス）|*%{color:red}32分程度%*|\r\n|CSVプラグイン実行（連携プラグイン：LDAP→CSV）\r\n※）LDAP→CSVでリバースマッピングを利用してLDAPに書き込み|3分程度|\r\n|CSVプラグイン実行（連携プラグイン：LDAP→AD）\r\n※）リバースマッピングを利用してLDAPに書き込み|3分程度|\r\n\r\nなぜかCSVプラグイン実行からLDAPグループメンテナンスを実行すると操作ログへの書き込み時間が長くなる？\r\n\r\n\r\n\r\n\r\n",
+      "created_on": "2019-08-20T01:26:06Z",
+      "private_notes": false,
+      "details": []
+    },
+    {
+      "id": 340013,
+      "user": {
+        "id": 10,
+        "name": "井関 武史"
+      },
+      "notes": "",
+      "created_on": "2019-08-20T01:25:22Z",
+      "private_notes": false,
+      "details": [
+        {
+          "property": "relation",
+          "name": "relates",
+          "old_value": null,
+          "new_value": "35823"
+        }
+      ]
+    },
+    {
+      "id": 339229,
+      "user": {
+        "id": 10,
+        "name": "井関 武史"
+      },
+      "notes": "似たような現象はLDAP→ガルーン反映プラグインでもある\r\nhttps://exgennetworks.cloudmine.jp/redmine/issues/29029",
+      "created_on": "2019-08-14T01:26:09Z",
+      "private_notes": false,
+      "details": []
+    },
+    {
+      "id": 338329,
+      "user": {
+        "id": 10,
+        "name": "井関 武史"
+      },
+      "notes": "",
+      "created_on": "2019-08-06T05:56:35Z",
+      "private_notes": false,
+      "details": [
+        {
+          "property": "attr",
+          "name": "description",
+          "old_value": "http://10.1.1.4/testlink-1.9.14/ltx.php?item=exec&feature_id=21220&build_id=1641\r\n\r\n東京都庁様向けLDAPグループメンテナンスの非機能テストをしていますが、\r\n以下の通り操作ログのプロセスが100%に張り付き、操作がほぼできない状態になります。\r\n\r\n!操作ログ_cpu100%.png!\r\n\r\nこの状態はプラグイン実行が終了し、操作ログの設定にある「監視間隔」で設定した秒数後の後ぐらいに発生します。\r\n※）おそらく操作ログの設定にある「監視間隔」で設定した秒数を待機した後、操作ログが何かの処理を行っています。\r\n\r\nLDAPグループメンテナンスの問題ではないのですが。。。\r\n\r\n\r\n\r\n\r\n",
+          "new_value": "http://10.1.1.4/testlink-1.9.14/ltx.php?item=exec&feature_id=21220&build_id=1641\r\n\r\n東京都庁様向けLDAPグループメンテナンスの非機能テストをしていますが、\r\n以下の通り操作ログのプロセスが100%に張り付き、操作がほぼできない状態になります。\r\n\r\n!操作ログ_cpu100_.png!\r\n\r\nこの状態はプラグイン実行が終了し、操作ログの設定にある「監視間隔」で設定した秒数後の後ぐらいに発生します。\r\n※）おそらく操作ログの設定にある「監視間隔」で設定した秒数を待機した後、操作ログが何かの処理を行っています。\r\n\r\nLDAPグループメンテナンスの問題ではないのですが。。。\r\n\r\n\r\n\r\n\r\n"
+        }
+      ]
+    }
+  ]
+}
