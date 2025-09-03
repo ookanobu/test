@@ -1,21 +1,26 @@
+import fs from 'fs';
+import path from 'path';
+import axios from 'axios';
+import { execSync } from 'child_process';
 
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
-const TEST_ISSUE_IDS = [35701]; // ←ここを好きなIDに変更して使う
+const TEST_ISSUE_IDS: number[] = [35701]; // ←ここを好きなIDに変更して使う
 
 // ★APIキーをここに設定（必要に応じて環境変数等に変更可）
-const API_KEY = process.env.REDMINE_API_KEY || 'a9c7a0f75c639e86597038a38b76bd82f8fb6ec7';
+const API_KEY: string = process.env.REDMINE_API_KEY || 'a9c7a0f75c639e86597038a38b76bd82f8fb6ec7';
 
-
-async function getIssueDetail(issueId) {
-  const url = `https://exgennetworks.cloudmine.jp/redmine/issues/${issueId}.json?include=journals`;
-  const res = await axios.get(url, { params: { key: API_KEY } });
-  return res.data.issue;
+interface IssueDetail {
+  id: number;
+  subject: string;
+  // 必要に応じて他のプロパティを追加
 }
 
-// main関数をグローバルスコープに正しく定義
-async function main() {
+async function getIssueDetail(issueId: number): Promise<IssueDetail> {
+  const url = `https://exgennetworks.cloudmine.jp/redmine/issues/${issueId}.json?include=journals`;
+  const res = await axios.get(url, { params: { key: API_KEY } });
+  return res.data.issue as IssueDetail;
+}
+
+async function main(): Promise<void> {
   for (const id of TEST_ISSUE_IDS) {
     try {
       const detail = await getIssueDetail(id);
@@ -27,7 +32,6 @@ async function main() {
       console.log(`詳細情報を一時ファイルに保存: ${tmpPath}`);
 
       // Copilot CLIで要約を取得
-      const { execSync } = require('child_process');
       const prompt = 'Redmine issueの内容を要約してください。日本語で簡潔にまとめてください。';
       try {
         const copilotCmd = `gh copilot suggest -p "${prompt}" -f "${tmpPath}"`;
@@ -36,15 +40,14 @@ async function main() {
         console.log('--- Copilot要約結果 ---');
         console.log(summary);
         console.log('--- ここまで ---');
-      } catch (cliErr) {
+      } catch (cliErr: any) {
         console.error('Copilot CLI実行エラー:', cliErr.message);
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(`ID ${id} の詳細取得失敗:`, e.message);
     }
   }
 }
-
 
 // エントリポイント
 if (require.main === module) {
